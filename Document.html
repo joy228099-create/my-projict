@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:3000/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="./Document_files/___vscode_livepreview_injected_script"></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+<title>Do you love me?</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:#1d2033;
+    font-family:Arial;
+}
+
+.container{
+    width:380px;
+    height:380px;
+    background:white;
+    border-radius:10px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.page{
+    width:100%;
+    height:100%;
+    position:absolute;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+img{
+    width:180px;
+}
+
+h1{
+    margin:20px 0;
+}
+
+button{
+    border:none;
+    border-radius:20px;
+    padding:12px 25px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+#yes{
+    background:#ff5ca8;
+    color:white;
+}
+
+#no{
+    background:#ff5ca8;
+    color:white;
+    position:absolute;
+    top:250px;
+    left:220px;
+}
+
+#heartPage,#finalPage{
+    display:none;
+}
+
+.heart{
+    font-size:90px;
+    animation:bounce 1s infinite;
+}
+
+@keyframes bounce{
+    50%{
+        transform:translateY(-20px);
+    }
+}
+</style>
+
+
+
+
+<div class="container">
+
+<!-- First Page -->
+<div class="page" id="questionPage" style="display: none;">
+
+<img src="./Document_files/bear2.gif">
+
+<h1>Do you love me?</h1>
+
+<button id="yes" onclick="showLove()">Yes</button>
+
+<button id="no" style="left: 52.6889px; top: 195.072px;">No</button>
+
+</div>
+
+
+<!-- Heart Page -->
+<div class="page" id="heartPage" style="display: none;">
+<div class="heart">❤️</div>
+</div>
+
+
+<!-- Final Page -->
+<div class="page" id="finalPage" style="display: flex;">
+
+<img src="./Document_files/bear.gif">
+
+<h1>I knew it 😍!</h1>
+
+</div>
+
+</div>
+
+
+<script>
+
+const noBtn=document.getElementById("no");
+
+noBtn.addEventListener("mouseover",()=>{
+
+let x=Math.random()*280;
+let y=Math.random()*300;
+
+noBtn.style.left=x+"px";
+noBtn.style.top=y+"px";
+
+});
+
+function showLove(){
+
+document.getElementById("questionPage").style.display="none";
+
+document.getElementById("heartPage").style.display="flex";
+
+setTimeout(()=>{
+
+document.getElementById("heartPage").style.display="none";
+
+document.getElementById("finalPage").style.display="flex";
+
+},2000);
+
+}
+
+</script>
+
+
+
+
+</body></html>
